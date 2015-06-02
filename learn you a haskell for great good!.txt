@@ -14,7 +14,7 @@ About the "List"
 	:  also means"add". but is restricted that the first one can only be a single item. element+list
 		ex:[1,2,3]:[1,2,3]  >  error    but [1,2,3]:[[1,2,3],[2,3]]  >    [[1,2,3],[1,2,3],[2,3]]
 	:[] add the value infront of it(value prepended to it)
-		ex: :2:3[]   >   [2,3]
+		ex: 2:[1, 4, 6]   >   [2, 1, 4, 6]
 	Comparing List:  compare in order
 		ex:[3,600] >= [5,7]   >  false
 	Other Function for List
