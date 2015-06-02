@@ -11,7 +11,7 @@
 * dot product
 
 > dp :: [Int] -> [Int] -> Int
->>
+>> let dp xs = [x*x | x <- xs]
 
 * rewrite `doubleEach` with `map :: (a -> b) -> [a] -> [b]`
 
