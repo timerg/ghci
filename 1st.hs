@@ -14,4 +14,4 @@ dp :: [Int] -> [Int] -> Int
 dp xs ys = sum (zipWith (*) xs ys)
 
 doubleEach' :: Int -> [Int]
-doubleEach' x = map(replicate x)x
+doubleEach' x = map(*)x

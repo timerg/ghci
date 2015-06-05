@@ -1,85 +1,95 @@
-For Boolean Algebra:
-	&& means "and"
-	|| means "or"
-	== means "equal"
-	/= means "not equal"
+## For Boolean Algebra:
+* && means "and"
+* || means "or"
+* == means "equal"
+* /= means "not equal"
 
-	' has no function. it used emphasize or different version
-About the "List"
-	list can contain more than one sublist. just type [[]]
-	!! used to extract value from a list
-		ex:
-	use let XXX = [,]
-	++ means "add" can add two argument with same type. list+list
-	:  also means"add". but is restricted that the first one can only be a single item. element+list
-		ex:[1,2,3]:[1,2,3]  >  error    but [1,2,3]:[[1,2,3],[2,3]]  >    [[1,2,3],[1,2,3],[2,3]]
-	:[] add the value infront of it(value prepended to it)
-		ex: 2:[1, 4, 6]   >   [2, 1, 4, 6]
-	Comparing List:  compare in order
-		ex:[3,600] >= [5,7]   >  false
-	Other Function for List
-		head: choose the first element
-		tail: choose elements except the first element
-		last: choose the last element
-		init: choose  elements except the last element
-		length: to now how many elements there are
-		null: check whether the list is empty or not. True/False will be given
-		reverse: list will be reversed
-		take: take element from list
-			ex: take 3 [1,2,3,4,5,6,7]   >  [1,2,3]   take 1 [1]    take 0    >    []
-		drop: oposite to take
-			ex: drop 3 [1,2,3,4,5]    >     [4,5]
-		maximum:
-		sum:
-	Texas Ranges
-		.. give ranged output
-			ex: [1..4]   >  [1,2,3,4,]
-			also  [1,5..20]  >  {1,5,10,15,20]
-				but [4..1]  >  [],  it need to be [4,3..1]  >  [4,3,2,1]
-					[1,3,5..15]   >   error
-			take: limit the number
-				ex: take 3 [1..40]  >  [1,2,3]
-			take + cycle: not neccessory to be list
-				ex: take 3 (cycle ["i eat"]   >   [i eat,i eat, i eat]  take 2 (cycle "r")  >  rr
-			take + repeat: also not neccessory to be list. But list results will be given
-				ex: take 3 (repeat "r")  >  ["r","r","r"]
-			replicate:
-				ex: replicate 3 5  >  [5,5,5]
-	List Comprehension
-		<- is just like �`, in english means belong to.
-		|  like the | used in math expression
-			ex: [x*2 | x <- [1..10], x-5>7 >  [16,18,20]
-			ex: length' =
+##	Function
+* ' has no function. it used emphasize or different version
 
-	tuples: by ()
-		can contain different types. ex: (1,2,'asd')
-		different length tuple are different types  ex: [(1,2),(1,2,3)]  >   error
-		different containing type tuple are different types  ex: [(1,2,3),('a',2,3)]  >  error
-			fst takes a pair(only pair, no triple or more)  and returns its first component   ex:  fst(2,4,'a')  >  2
-			snd same as fst but returns second one
-			zip produce a list of pairs  ex: zip [1..3]['a'..'c']  >   [(1,'a'),(2,'b'),(3,'c')]
-				ex: zip[1,3..]['a'..'c']  >  [(1,'a'),(2,'b'),(3,'c')]  and the remaining numbers are ignored.
+## About the "List"
+	+ list can contain more than one sublist. just type [[]]
+	+ use let XXX = [,]
+* !! used to extract value from a list
+	>ex:
+* ++ means "add" can add two argument with same type. list+list
+* :  also means"add". but is restricted that the first one can only be a single item. element+list
+	>	ex:[1,2,3]:[1,2,3]  >  error    but [1,2,3]:[[1,2,3],[2,3]]  >    [[1,2,3],[1,2,3],[2,3]]
 
+* :[ ] add the value infront of it(value prepended to it)
+	>	ex: 2:[1, 4, 6]   >   [2, 1, 4, 6]
 
-Type
+#### Comparing List:
+* compare in order
+	>	ex:[3,600] >= [5,7]   >  false
 
-	Type names start with capital letters
-	Type variable:  wich means it can operate on many differnet types(variable types)
+#### Other Function for List
+* head: choose the first element
+*	tail: choose elements except the first element
+*	last: choose the last element
+*	init: choose  elements except the last element
+*	length: to now how many elements there are
+*	null: check whether the list is empty or not. True/False will be given
+*	reverse: list will be reversed
+*	take: take element from list
+	> ex: take 3 [1,2,3,4,5,6,7]   >  [1,2,3]   take 1 [1]    take 0    >    []
+* drop: oposite to take
+	>	ex: drop 3 [1,2,3,4,5]    >     [4,5]
+*	maximum:
+*	sum:
+
+####	Texas Ranges
+* .. give ranged output
+	>	ex: [1..4]   >  [1,2,3,4,],
+		also  [1,5..20]  >  {1,5,10,15,20]
+		but [4..1]  >  [],  it need to be [4,3..1]  >  [4,3,2,1]
+		[1,3,5..15]   >   error
+* take: limit the number
+	>	ex: take 3 [1..40]  >  [1,2,3]
+* take + cycle: not neccessory to be list
+	>	ex: take 3 (cycle ["i eat"]   >   [i eat,i eat, i eat]  take 2 (cycle "r")  >  rr
+* take + repeat: also not neccessory to be list. But list results will be given
+	>	ex: take 3 (repeat "r")  >  ["r","r","r"]
+* replicate:
+	>	ex: replicate 3 5  >  [5,5,5]
+
+### *List Comprehension*
+* <- means "belongs to"
+* |  like the | used in math expression
+	>	ex: [x*2 | x <- [1..10], x-5>7 >  [16,18,20]
+
+## tuples: by ()
+	* can contain different types. ex: (1,2,'asd')
+	* different length tuple are different types  ex: [(1,2),(1,2,3)]  >   error
+	* different containing type tuple are different types  ex: [(1,2,3),('a',2,3)]  >  error
+* fst takes a pair(only pair, no triple or more)  and returns its first component   ex:  fst(2,4,'a')  >  2
+*	snd same as fst but returns second one
+*	zip produce a list of pairs
+	> ex: zip [1..3]['a'..'c']  >   [(1,'a'),(2,'b'),(3,'c')] </br>
+	zip[1,3..]['a'..'c']  >  [(1,'a'),(2,'b'),(3,'c')]  and the remaining numbers are ignored.
+
+## Type
+	* Type names start with capital letters
+	* Type variable:  wich means it can operate on many differnet types(variable types)
 		try  :t head.   the "a" represents any type you could type in
-Type class
-	If a type is an instance of a type class, it implements and supports the behavior that type class describes.
-		ex: you can't type :t ==.     instead    :t (==)
-	Values can be instances
+#### Type class
+	* If a type is an instance of a type class, it implements and supports the behavior that type class describes.
+	ex: you can't type :t ==.     instead    :t (==)
+	* Values can be instances
 		because it is a infix function by default
 			"a function composed of only special character"
 			need to be surrounded with ()
-	Eq is a type class that provides interface for testing for equality.
-		=>	means class constraint.
-			ex: :t(==)    >    (==) :: (Eq a) => a -> a -> Boolean	   :     the equality function takes any two values that are of the same type and returns Boolean
-	Ord is a type class includes > < >= <=...
-		being an instance of Eq is neccessory for being an instance of Ord
-	Show  its instances(types) can be represented as strings
-		includes show(is a type included in the type class: Show)
+* Eq is a type class that provides interface for testing for equality.
+* =>	means class constraint.
+	> ex: :t(==)    >    (==) :: (Eq a) => a -> a -> Boolean	   :     the equality function takes any two values that are of the same type and returns Boolean
+* Ord is a type class includes > < >= <=...
+
+	**being an instance of Eq is neccessory for being an instance of Ord**
+* Show  its instances(types) can be represented as strings
+
+
+
+				includes show(is a type included in the type class: Show)
 	Read  is opposite to Show,  it includes type: read
 		but there are a few different results that read could give ex: Boolen, Int, Float, Char(String)
 		so we can add ::,  or just simply type equation to let computer know what to give by himself
@@ -101,3 +111,9 @@ Type class
 		includes int, Intger, fromIntegral
 			fromIntegral :: (Num b, Integral a) => a -> b
 				it help Integer works with Float
+
+
+
+
+
+## Type nad Typeclas
