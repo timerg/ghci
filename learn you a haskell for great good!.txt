@@ -117,3 +117,14 @@
 
 
 ## Type nad Typeclas
+
+	Haskell read function statement from the top. that means the toppest has the highest priority
+
+*  _ means the same thing as it does in list comprehensions when defining functions
+	> ex: (x, _, _)    if x is Int, than the other two are Int, too.
+
+
+
+	[1,2,3,4] == 1:2:[3,4] == 1:2:3:4:[]
+
+	all@(x:xs)     >     using all represents (x:xs) when building function
