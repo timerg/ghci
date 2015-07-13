@@ -10,6 +10,7 @@
 ## About the "List"
 	+ list can contain more than one sublist. just type [[]]
 	+ use let XXX = [,]
+		+ if declare more than one when using let, use ";" between them
 * !! used to extract value from a list
 	>ex:
 * ++ means "add" can add two argument with same type. list+list

@@ -1,6 +1,11 @@
 -- remember to ask what means before =>
 
 
+import Data.List  -- imports are usually done at the top of the file
+import Data.List (nub, sort)   -- only import nub and sort function from the module
+import Data.List hiding (nub) -- import all functions in Data except nub
+import qualified Data.Map  -- in this way, you can use functions in Data.Map only if you type  Data.Map.filter or
+import qualified Data.Map as M -- can type as M.filter
 
 triple :: Int -> Int
 triple x = x*3
@@ -76,3 +81,62 @@ listnum' = foldr (\x acc -> x + acc * 10) 0 . reverse
 head2 :: [a] -> a
 head2 [] = error "jkjlkj"
 head2 (x:y) = x
+
+myLast :: [a] -> a
+myLast [] = error "nana"
+myLast (x:[]) = x
+myLast (x:xs) = myLast xs --recursion
+
+myButLast :: [a] -> a
+myButLast [] = error "none"
+myButLast (x:[]) = error "only one"
+myButLast (x:y:[]) = x
+myButLast (x:xs) = myButLast xs
+
+elementAt :: [a] -> Int -> a
+elementAt xs x = last(take x xs)
+
+elementAt' :: [a] -> Int -> a
+elementAt' [] 0 = error "none"
+elementAt' [] a = error "null"
+elementAt' (x:xs) 1 = x
+elementAt' (x:xs) a = elementAt' xs (a - 1)
+
+
+take' :: Int -> [a] -> [a]
+take' a [] = error "null"
+take' 0 xs = xs
+take' a (x:xs) = take' (a - 1) xs
+
+myLength :: [a] -> Int
+myLength [] = 0
+myLength (x:xs) = myLength xs + 1
+
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse (x:xs) = (myReverse xs) ++ x:[]
+
+isPalindrome :: (Eq a) => [a] -> Bool
+isPalindrome xs = xs == (reverse xs)
+
+bmiTell :: (RealFloat a) => a -> a -> String
+bmiTell weight height
+      | weight / height ^ 2 < 18.5 = "You're underweight, you emo, you!"
+      | weight / height ^ 2 == 18.5 = "You're same with me, cool!"
+      | weight / height ^ 2 <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
+      | otherwise                 = "You're a whale, congratulations!"
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' _ [] = []
+filter' p (x:xs)
+    | p x       = x : filter' p xs
+    | otherwise = filter' p xs      -- after the | will give a state that will do the truth and flase distinguishment
+
+headcase' :: [a] -> a
+headcase' xs = case xs of [] -> error "No head for empty lists!"
+                          (x:_) -> x
+
+sayfuck :: String -> IO String
+-- sayfuck xs  = do
+--   word <- getLine
+--   putStrLn $ show xs ++ " fuck!!"
+  putStrLn "Hallo"
