@@ -40,3 +40,11 @@ main = do
 -- main = getLine >>= sayfuck
     -- return ()
     -- putStrLn $ a ++ " " ++ b
+
+
+
+-- about >>=
+-- (>>=) :: Monad m => m a -> (a -> m b) -> m b
+-- a is water, b is wine
+    -- getLine :: IO String
+    -- now IO is the bottle
