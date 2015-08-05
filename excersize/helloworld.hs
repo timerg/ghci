@@ -13,14 +13,16 @@
 -- reverseWords :: String -> String
 -- reverseWords = unwords . map reverse . words
 
--- main = do
---     return ()
---     return "HAHAHA"
---     line <- getLine
---     return "BLAH BLAH BLAH"
---     return 4
---     putStrLn line
--- -- those "HAHAHA", "BLAH BLAH BLAH "...do nothing since they don't bind to any name
+main = do
+    return ()
+    return "HAHAHA"
+    -- line <- getLine
+    line <- sequence [getLine, getLine, getLine]
+    return "BLAH BLAH BLAH"
+    return 4
+    -- putStrLn line  -- String -> IO ()
+    print line   -- Show a => a -> IO ()
+-- those "HAHAHA", "BLAH BLAH BLAH "...do nothing since they don't bind to any name
 
 
 myReverse :: [a] -> [a]
@@ -31,11 +33,19 @@ god :: String -> IO ()
 god s = do
     putStrLn $ s ++ " fuck!"
 
-main :: IO ()
-main = do
-    water <- getLine :: IO String
-    -- word :: String
-    god water
+
+
+
+
+
+
+
+
+-- main :: IO ()
+-- main = do
+--     water <- getLine :: IO String
+--     -- word :: String
+--     god water
 
 -- main = getLine >>= sayfuck
     -- return ()
