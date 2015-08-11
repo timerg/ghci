@@ -1,10 +1,11 @@
 import System.IO
 import Data.List
+import qualified Data.Text.IO as Text
 
 readFile' :: String -> IO String
 readFile' path = do
-    handle <- openFile path ReadMode
-    hGetContents handle
+    handle <- openFile path ReadMode  -- will give a handle. Actually One can use "ReadFile", which will simply give IO String
+    hGetContents handle -- will conduct the handle
 
 crosstime :: Num xt => [xt] -> [xt] -> [xt]
 crosstime [] xt = []
@@ -31,4 +32,5 @@ main = do
     let contentsNumA = (map read (lines contentsA) :: [Int])   -- :: 是會包到最外麵
         contentsNumB = (map read (lines contentsB) :: [Int])
         result = crossadd contentsNumA contentsNumB
+-- zip
     print result
