@@ -21,3 +21,7 @@ crosstime' (x:xs) (y:ys) = map ((*) x) (y:ys) ++ crosstime xs (y:ys)
 crosstime'' :: Num a => [a] -> [a] -> [a]
 crosstime'' xs ys = ys >>= f
     where   f z = map ((*) z) xs
+
+combineString :: [String] -> Int -> [String] ->  Int -> String
+let
+combineString

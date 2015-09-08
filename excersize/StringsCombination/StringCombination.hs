@@ -8,16 +8,12 @@ readFile' path = do
 
 main = do
     -- pathA <- getLine
-    let pathA = "test/test.txt"
-    -- handleA <- openFile pathA ReadMode
-    -- pathB <- getLine
-    let pathB = "test/test.txt"
+    let pathA = "test.txt"
+
+    let pathB = "test.txt"
     contentsA <- readFile' pathA
     contentsB <- readFile' pathB
-    -- handleB <- openFile pathB ReadMode
-    -- contentsA <- hGetContents handleA
-    -- contentsB <- hGetContents handleB
-    let contentsNumA = (map read (lines contentsA) :: [Int])   -- :: 是會包到最外麵
-        contentsNumB = (map read (lines contentsB) :: [Int])
-        result = crossadd contentsNumA contentsNumB
-    print result
+    let contentsNumA = lines contentsA
+        contentsNumB = lines contentsB
+    
+    print contentsNumA
