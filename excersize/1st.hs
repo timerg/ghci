@@ -134,9 +134,3 @@ filter' p (x:xs)
 headcase' :: [a] -> a
 headcase' xs = case xs of [] -> error "No head for empty lists!"
                           (x:_) -> x
-
-sayfuck :: String -> IO String
--- sayfuck xs  = do
---   word <- getLine
---   putStrLn $ show xs ++ " fuck!!"
-  putStrLn "Hallo"
