@@ -9,7 +9,7 @@ kick (White a) = White $ a + 1
 kick (Black a) = Black $ a + 1
 
 data List a = Nil | Cons a (List a) deriving (Show)
-data List2 = Nil2 | Cons2 a deriving (Show)
+data List2 a = Nil2 | Cons2 a deriving (Show)
 
 a0 :: List Int
 a0 = Nil
@@ -34,9 +34,21 @@ length' (Cons _ a) = 1 + length' a
 -- sum' Nil = 0
 -- sum' (Cons b a) = b  + sum' a
 
+addList :: (Num a) => List a -> List a -> List a
+addList Nil Nil = Nil
+addList Nil a = a
+addList a Nil = a
+addList (Cons a1 b1) (Cons a2 b2) = Cons (a1 + a2) (addList b1 b2)
+
+
 data ListString = NilSt | ConsSt String ListString deriving (Show)
 
-
+data Dog = Dog1 {name :: String,
+                old :: Int,
+                height :: Float
+                } deriving(Show)
+-- askdog :: Dog -> String
+-- askdog = Dog "wang" 1 1.3
 
 
 
